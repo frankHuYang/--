@@ -1,4 +1,5 @@
-﻿class Program
+﻿using algorithim.array;
+class Program
 {
     static void Main(string[] args)
     {

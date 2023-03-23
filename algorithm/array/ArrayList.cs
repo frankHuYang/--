@@ -1,20 +1,39 @@
+namespace algorithim.array;
 public class ArrayList
 {
 
     private int[] _array;
     private const int _defaultCapacity = 10;
     private int currentCount = 0;
+
+
+    public int Length => currentCount;
     public ArrayList() : this(_defaultCapacity)
     {
 
     }
 
+    public int this[int index]
+    {
+        get
+        {
+            return _array[index];
+        }
+
+        set
+        {
+            if (index <= 0) throw new ArgumentOutOfRangeException($"{index}必须大于0");
+            if (index > currentCount - 1) throw new ArgumentOutOfRangeException($"{index}超出范围！");
+            _array[index] = value;
+
+        }
+
+    }
     public ArrayList(int capacity)
     {
         if (capacity <= 0) throw new ArgumentOutOfRangeException($"{capacity}必须大于0");
         _array = new int[capacity];
     }
-
 
     private bool HaveCapacity()
     {

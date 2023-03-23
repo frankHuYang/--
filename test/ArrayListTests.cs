@@ -1,6 +1,3 @@
-using algorithim.array;
-using Shouldly;
-using NSubstitute;
 namespace test;
 
 public class ArrayListTests
